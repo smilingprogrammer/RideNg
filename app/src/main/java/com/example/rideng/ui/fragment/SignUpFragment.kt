@@ -1,12 +1,13 @@
-package com.example.rideng
+package com.example.rideng.ui.fragment
 
-import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.rideng.R
+import com.example.rideng.SignUpViewModel
 import com.example.rideng.databinding.SignUpFragmentBinding
 
 class SignUpFragment : Fragment() {
