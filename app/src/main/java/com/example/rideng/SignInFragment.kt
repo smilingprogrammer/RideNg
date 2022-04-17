@@ -17,7 +17,7 @@ class SignInFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = SignInFragmentBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
@@ -27,6 +27,10 @@ class SignInFragment : Fragment() {
 
         binding.createOne.setOnClickListener {
             findNavController().navigate(R.id.action_signInFragment_to_signUpFragment)
+        }
+
+        binding.forgotPassword.setOnClickListener {
+            findNavController().navigate(R.id.action_signInFragment_to_forgotFragment)
         }
     }
 

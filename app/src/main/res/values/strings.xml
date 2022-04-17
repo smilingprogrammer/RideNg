@@ -24,4 +24,6 @@
     <string name="create_one">Create one</string>
     <string name="enter_your_username_and_password">Enter your valid Username and Password</string>
     <string name="already_have_an_account">Already have an account?</string>
+    <string name="reset_password">Reset Password</string>
+    <string name="enter_your_registered_email_address">Enter your registered email address</string>
 </resources>
