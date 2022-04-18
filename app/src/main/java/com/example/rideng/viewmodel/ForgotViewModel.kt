@@ -1,7 +1,7 @@
-package com.example.rideng
+package com.example.rideng.viewmodel
 
 import androidx.lifecycle.ViewModel
 
 class ForgotViewModel : ViewModel() {
-    // TODO: Implement the ViewModel
+    private val 
 }

@@ -7,7 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import com.example.rideng.R
-import com.example.rideng.SignInViewModel
+import com.example.rideng.viewmodel.SignInViewModel
 import com.example.rideng.databinding.SignInFragmentBinding
 
 class SignInFragment : Fragment() {
