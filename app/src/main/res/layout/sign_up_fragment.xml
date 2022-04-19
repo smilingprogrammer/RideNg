@@ -63,7 +63,6 @@
                 android:id="@+id/user_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"
                 android:hint="@string/username"/>
         </com.google.android.material.textfield.TextInputLayout>
 
