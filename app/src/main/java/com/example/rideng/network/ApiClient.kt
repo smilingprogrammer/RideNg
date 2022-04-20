@@ -1,13 +1,12 @@
 package com.example.rideng.network
 
-import com.squareup.moshi.Moshi
-import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
+import okhttp3.MediaType
 import okhttp3.OkHttpClient
+import okhttp3.RequestBody
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.converter.moshi.MoshiConverterFactory
-import java.util.concurrent.TimeUnit
+
 
 //private const val BASE_URL = "https://ride-ng.herokuapp.com/api/"
 ////private val moshi = Moshi.Builder()
@@ -55,4 +54,17 @@ class ApiClient {
                 .build()
         }
     }
+
+//    var client = OkHttpClient().newBuilder()
+//        .build()
+//    var mediaType: MediaType = MediaType.parse("text/plain")
+//    var body: RequestBody = create(
+//        mediaType,
+//        "{\r\n    \"firstname\": \"chinaza\",\r\n    \"lastname\": \"Chinaza\",\r\n    \"email\": \"ch@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"bvn\": \"234556773\",\r\n    \"phone\": \"2335566\"\r\n}"
+//    )
+//    var request: Request = Builder()
+//        .url("https://ride-ng.herokuapp.com/api/v1/auth/register")
+//        .method("POST", body)
+//        .build()
+//    var response: Response = client.newCall(request).execute()
 }

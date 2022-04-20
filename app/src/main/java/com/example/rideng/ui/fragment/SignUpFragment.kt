@@ -44,17 +44,19 @@ class SignUpFragment : Fragment() {
     }
 
     private fun newUser() {
-        val user = NewUser(binding.userName.toString(),
-            binding.name.toString(),
-            binding.email.toString(),
-            binding.password.toString())
+        val user = NewUser(binding.firstName.toString(),
+        binding.lastName.toString(),
+        binding.email.toString(),
+        binding.password.toString(),
+        binding.bvn.toString(),
+        binding.phone.toString())
 
         viewModel.registerUser(user)
     }
 
     private fun initViewModel() {
         viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
-        viewModel.getNewUserObserver().observe(viewLifecycleOwner, Observer <NewUserResponse?>{
+        viewModel.getNewUserObserver().observe(viewLifecycleOwner, Observer <NewUserResponse>{
 
             if (it == null){
                 Toast.makeText(context, "Failed to create user", Toast.LENGTH_SHORT).show()

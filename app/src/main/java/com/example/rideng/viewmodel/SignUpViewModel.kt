@@ -12,13 +12,13 @@ import retrofit2.Response
 
 class SignUpViewModel : ViewModel() {
 
-    lateinit var newUserLiveData: MutableLiveData<NewUserResponse?>
+    lateinit var newUserLiveData: MutableLiveData<NewUserResponse>
 
     init {
         newUserLiveData = MutableLiveData()
     }
 
-    fun getNewUserObserver(): MutableLiveData<NewUserResponse?>{
+    fun getNewUserObserver(): MutableLiveData<NewUserResponse>{
         return newUserLiveData
     }
 

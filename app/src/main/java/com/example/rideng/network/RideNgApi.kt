@@ -11,6 +11,6 @@ interface RideNgApi {
 
     //Register User
     @POST("v1/auth/register")
-    @Headers("Accept:application/json", "Content-Type:application/json")
+    @Headers("Accept:application/json", "Content-Type:application/json; charset=utf-8")
     fun registerUser(@Body newUser: NewUser): Call<NewUserResponse>
 }
