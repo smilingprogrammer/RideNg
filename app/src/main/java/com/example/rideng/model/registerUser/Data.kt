@@ -1,15 +1,16 @@
 package com.example.rideng.model.registerUser
 
 data class Data(
-    val bvn: String,
+    val __v: Int,
+    val _id: String,
     val confirmEmailToken: String,
     val createdAt: String,
+    val driveManual: Boolean,
     val email: String,
-    val firstname: String,
+    val id: String,
     val isEmailConfirmed: Boolean,
-    val lastname: String,
+    val name: String,
     val password: String,
-    val phone: String,
-    val updatedAt: String,
-    val user_id: Int
+    val role: String,
+    val username: String
 )

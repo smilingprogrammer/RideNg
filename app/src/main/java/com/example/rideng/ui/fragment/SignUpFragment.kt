@@ -25,7 +25,7 @@ class SignUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = SignUpFragmentBinding.inflate(layoutInflater, container, false)
-//        viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         return binding.root
     }
 
@@ -36,7 +36,12 @@ class SignUpFragment : Fragment() {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
         }
 
-        initViewModel()
+        viewModel.newUserResponse.observe(viewLifecycleOwner, Observer { res->
+            Toast.makeText(context, "User $res added to database", Toast.LENGTH_SHORT).show()
+        })
+        viewModel.error.observe(viewLifecycleOwner, Observer { err->
+            Toast.makeText(context, err, Toast.LENGTH_SHORT).show()
+        })
 
         binding.proceed.setOnClickListener {
             newUser()
@@ -44,26 +49,12 @@ class SignUpFragment : Fragment() {
     }
 
     private fun newUser() {
-        val user = NewUser(binding.firstName.toString(),
-        binding.lastName.toString(),
-        binding.email.toString(),
+        val user = NewUser(binding.email.toString(),
+        binding.name.toString(),
         binding.password.toString(),
-        binding.bvn.toString(),
-        binding.phone.toString())
+        binding.userName.toString())
 
         viewModel.registerUser(user)
-    }
-
-    private fun initViewModel() {
-        viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
-        viewModel.getNewUserObserver().observe(viewLifecycleOwner, Observer <NewUserResponse>{
-
-            if (it == null){
-                Toast.makeText(context, "Failed to create user", Toast.LENGTH_SHORT).show()
-            } else {
-                Toast.makeText(context, "Successfully created user", Toast.LENGTH_LONG).show()
-            }
-        })
     }
 
 }

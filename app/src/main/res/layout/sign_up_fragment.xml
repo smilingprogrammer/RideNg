@@ -41,21 +41,6 @@
             android:layout_height="wrap_content"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/bvn"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:inputType="textEmailAddress"
-                android:hint="BVN"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:paddingTop="8dp">
 
@@ -76,26 +61,10 @@
             android:paddingTop="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/first_name"
+                android:id="@+id/name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textEmailAddress"
-                android:hint="Firstname"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:paddingTop="8dp">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/last_name"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="LastName"/>
+                android:hint="@string/name"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -123,11 +92,10 @@
             android:paddingTop="8dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/phone"
+                android:id="@+id/user_name"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:inputType="textPassword"
-                android:hint="Phone No."/>
+                android:hint="@string/username"/>
         </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 

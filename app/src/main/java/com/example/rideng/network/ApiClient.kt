@@ -38,33 +38,20 @@ import retrofit2.converter.gson.GsonConverterFactory
 //        retrofit.create(RideNgApi::class.java)
 //    }
 //}
-class ApiClient {
-    companion object {
-        val BASE_URL = "https://ride-ng.herokuapp.com/api/"
-        fun getRetrofitInstance(): Retrofit {
-            val logging = HttpLoggingInterceptor()
-            logging.level = HttpLoggingInterceptor.Level.BODY
-            val client = OkHttpClient.Builder()
-            client.addInterceptor(logging)
-
-            return Retrofit.Builder()
-                .baseUrl(BASE_URL)
-                .client(client.build())
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-        }
-    }
-
-//    var client = OkHttpClient().newBuilder()
-//        .build()
-//    var mediaType: MediaType = MediaType.parse("text/plain")
-//    var body: RequestBody = create(
-//        mediaType,
-//        "{\r\n    \"firstname\": \"chinaza\",\r\n    \"lastname\": \"Chinaza\",\r\n    \"email\": \"ch@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"bvn\": \"234556773\",\r\n    \"phone\": \"2335566\"\r\n}"
-//    )
-//    var request: Request = Builder()
-//        .url("https://ride-ng.herokuapp.com/api/v1/auth/register")
-//        .method("POST", body)
-//        .build()
-//    var response: Response = client.newCall(request).execute()
-}
+//class ApiClient {
+//    companion object {
+//        val BASE_URL = "https://ride-ng.herokuapp.com"
+//        fun getRetrofitInstance(): Retrofit {
+//            val logging = HttpLoggingInterceptor()
+//            logging.level = HttpLoggingInterceptor.Level.BODY
+//            val client = OkHttpClient.Builder()
+//            client.addInterceptor(logging)
+//
+//            return Retrofit.Builder()
+//                .baseUrl(BASE_URL)
+//                .client(client.build())
+//                .addConverterFactory(GsonConverterFactory.create())
+//                .build()
+//        }
+//    }
+//}
