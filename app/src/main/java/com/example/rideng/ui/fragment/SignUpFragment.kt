@@ -1,6 +1,7 @@
 package com.example.rideng.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,18 +15,23 @@ import com.example.rideng.viewmodel.SignUpViewModel
 import com.example.rideng.databinding.SignUpFragmentBinding
 import com.example.rideng.model.registerUser.NewUser
 import com.example.rideng.model.registerUser.NewUserResponse
+import com.example.rideng.network.ApiClient
+import com.example.rideng.repository.SignUpRepository
+import com.example.rideng.viewmodel.ViewModelFactory
 
 class SignUpFragment : Fragment() {
 
     private lateinit var binding: SignUpFragmentBinding
-    private lateinit var viewModel: SignUpViewModel
+    private val viewModel: SignUpViewModel by lazy {
+        ViewModelProvider(this, ViewModelFactory(SignUpRepository(ApiClient.retrofitService)))
+            .get(SignUpViewModel::class.java)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         binding = SignUpFragmentBinding.inflate(layoutInflater, container, false)
-        viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
         return binding.root
     }
 
@@ -36,11 +42,12 @@ class SignUpFragment : Fragment() {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
         }
 
-        viewModel.newUserResponse.observe(viewLifecycleOwner, Observer { res->
-            Toast.makeText(context, "User $res added to database", Toast.LENGTH_SHORT).show()
-        })
-        viewModel.error.observe(viewLifecycleOwner, Observer { err->
-            Toast.makeText(context, err, Toast.LENGTH_SHORT).show()
+        viewModel.newUserResponse.observe(viewLifecycleOwner, Observer {
+            if (it == null){
+                Toast.makeText(context, "User Added to database", Toast.LENGTH_SHORT).show()
+            } else {
+                Toast.makeText(context, "Failed to create user", Toast.LENGTH_SHORT).show()
+            }
         })
 
         binding.proceed.setOnClickListener {
@@ -56,5 +63,6 @@ class SignUpFragment : Fragment() {
 
         viewModel.registerUser(user)
     }
+
 
 }

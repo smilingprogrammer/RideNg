@@ -7,36 +7,30 @@ import androidx.lifecycle.viewModelScope
 import com.example.rideng.model.registerUser.NewUser
 import com.example.rideng.model.registerUser.NewUserResponse
 import com.example.rideng.network.RideNgApi
+import com.example.rideng.repository.SignUpRepository
 import kotlinx.coroutines.launch
 import retrofit2.Call
 import retrofit2.Callback
+import retrofit2.HttpException
 import retrofit2.Response
+import retrofit2.http.POST
 import java.net.SocketTimeoutException
 
-class SignUpViewModel : ViewModel() {
+class SignUpViewModel(private val signUpRepository: SignUpRepository) : ViewModel() {
 
     private val TAG = "RETROFIT_ERROR"
 
-    var newUserResponse = MutableLiveData<NewUserResponse>()
-    var error = MutableLiveData<String>()
-    var new = MutableLiveData<NewUserResponse>()
+    var newUserResponse = MutableLiveData<Call<NewUserResponse>>()
 
     fun registerUser(newUser: NewUser){
-        viewModelScope.launch {
-            var registration = RideNgApi().register(newUser)
-            try {
-                if (registration.isSuccessful){
-                    new.value = registration.body()
-                    Log.d(TAG, "${registration.body()}")
-                } else {
-                    error.value = registration.message()
-                    Log.d(TAG, "$registration")
-                }
-            } catch (e: Exception) {
-                Log.d(TAG, "${e.message}")
-            } catch (e: SocketTimeoutException) {
-                Log.d(TAG, "${e.message}")
+        try {
+
+            viewModelScope.launch {
+                val response = signUpRepository.registerUser(newUser)
+                newUserResponse.value = response
             }
+        } catch (e: HttpException){
+            Log.d(TAG, e.message())
         }
     }
 }
