@@ -3,12 +3,12 @@ package com.example.rideng.model.registerUser
 import com.google.gson.annotations.SerializedName
 
 data class NewUser(
-    @SerializedName("email")
+//    @SerializedName("email")
     val email: String,
-    @SerializedName("name")
+//    @SerializedName("name")
     val name: String,
-    @SerializedName("password")
+//    @SerializedName("password")
     val password: String,
-    @SerializedName("username")
+//    @SerializedName("username")
     val username: String
 )

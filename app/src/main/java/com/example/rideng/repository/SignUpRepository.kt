@@ -11,7 +11,7 @@ class SignUpRepository(private val rideNgApi: RideNgApi) {
 
     private val apiSerVice = ApiClient.retrofitService
 
-    suspend fun registerUser(newUser: NewUser): Call<NewUserResponse> {
+    suspend fun registerUser(newUser: NewUser): Response<NewUserResponse> {
         return rideNgApi.registerUser(newUser)
     }
 }

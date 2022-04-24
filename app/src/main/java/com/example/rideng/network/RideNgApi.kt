@@ -17,9 +17,9 @@ interface RideNgApi {
 
 
     //Register User
-    @POST("api/v1/auth/register")
+    @POST("/api/v1/auth/register")
     @Headers("Content-Type: application/json")
-    suspend fun registerUser(@Body newUser: NewUser): Call<NewUserResponse>
+    suspend fun registerUser(@Body newUser: NewUser): Response<NewUserResponse>
 
 //    companion object {
 //        operator fun invoke(): RideNgApi {

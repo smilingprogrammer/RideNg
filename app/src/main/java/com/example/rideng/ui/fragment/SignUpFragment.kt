@@ -18,6 +18,7 @@ import com.example.rideng.model.registerUser.NewUserResponse
 import com.example.rideng.network.ApiClient
 import com.example.rideng.repository.SignUpRepository
 import com.example.rideng.viewmodel.ViewModelFactory
+import kotlin.reflect.jvm.internal.impl.util.CheckResult
 
 class SignUpFragment : Fragment() {
 
@@ -42,8 +43,8 @@ class SignUpFragment : Fragment() {
             findNavController().navigate(R.id.action_signUpFragment_to_signInFragment)
         }
 
-        viewModel.newUserResponse.observe(viewLifecycleOwner, Observer {
-            if (it == null){
+        viewModel.newUserResponse.observe(viewLifecycleOwner, Observer { response ->
+            if (response.isSuccessful){
                 Toast.makeText(context, "User Added to database", Toast.LENGTH_SHORT).show()
             } else {
                 Toast.makeText(context, "Failed to create user", Toast.LENGTH_SHORT).show()
@@ -56,13 +57,11 @@ class SignUpFragment : Fragment() {
     }
 
     private fun newUser() {
-        val user = NewUser(binding.email.toString(),
-        binding.name.toString(),
-        binding.password.toString(),
-        binding.userName.toString())
+        val user = NewUser(binding.email.text.toString(),
+        binding.name.text.toString(),
+        binding.password.text.toString(),
+        binding.userName.text.toString())
 
         viewModel.registerUser(user)
     }
-
-
 }

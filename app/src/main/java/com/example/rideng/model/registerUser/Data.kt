@@ -3,28 +3,28 @@ package com.example.rideng.model.registerUser
 import com.google.gson.annotations.SerializedName
 
 data class Data(
-    @SerializedName("__v")
+//    @SerializedName("__v")
     val __v: Int,
-    @SerializedName("_id")
+//    @SerializedName("_id")
     val _id: String,
-    @SerializedName("confirmEmailToken")
+//    @SerializedName("confirmEmailToken")
     val confirmEmailToken: String,
-    @SerializedName("createdAt")
+//    @SerializedName("createdAt")
     val createdAt: String,
-    @SerializedName("driveManual")
+//    @SerializedName("driveManual")
     val driveManual: Boolean,
-    @SerializedName("email")
+//    @SerializedName("email")
     val email: String,
-    @SerializedName("id")
+//    @SerializedName("id")
     val id: String,
-    @SerializedName("isEmailConfirmed")
+//    @SerializedName("isEmailConfirmed")
     val isEmailConfirmed: Boolean,
-    @SerializedName("name")
+//    @SerializedName("name")
     val name: String,
-    @SerializedName("password")
+//    @SerializedName("password")
     val password: String,
-    @SerializedName("role")
+//    @SerializedName("role")
     val role: String,
-    @SerializedName("username")
+//    @SerializedName("username")
     val username: String
 )

@@ -11,7 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
 
-private const val BASE_URL = "https://ride-ng.herokuapp.com/"
+private const val BASE_URL = "https://ride-ng.herokuapp.com"
 private val moshi = Moshi.Builder()
     .add(KotlinJsonAdapterFactory())
     .build()

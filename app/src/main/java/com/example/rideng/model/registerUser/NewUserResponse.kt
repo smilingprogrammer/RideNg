@@ -3,10 +3,10 @@ package com.example.rideng.model.registerUser
 import com.google.gson.annotations.SerializedName
 
 data class NewUserResponse(
-    @SerializedName("data")
+//    @SerializedName("data")
     val `data`: Data,
-    @SerializedName("success")
+//    @SerializedName("success")
     val success: Boolean,
-    @SerializedName("token")
+//    @SerializedName("token")
     val token: String
 )
