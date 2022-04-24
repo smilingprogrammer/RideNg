@@ -1,5 +1,6 @@
 package com.example.rideng.network
 
+import com.example.rideng.model.getvehicle.GetVehicle
 import com.example.rideng.model.registerUser.NewUser
 import com.example.rideng.model.registerUser.NewUserResponse
 import okhttp3.OkHttpClient
@@ -21,7 +22,7 @@ interface RideNgApi {
     @GET("/api/v1/vehicles")
     suspend fun getVehicle(
 
-    )
+    ): GetVehicle
 
 //    companion object {
 //        operator fun invoke(): RideNgApi {
