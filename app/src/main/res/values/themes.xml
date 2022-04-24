@@ -17,6 +17,7 @@
     <style name="Theme.RideNg.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
+        <item name="colorPrimaryVariant">@color/button3</item>
     </style>
 
     <style name="Theme.RideNg.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />

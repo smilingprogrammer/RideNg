@@ -7,10 +7,7 @@ import retrofit2.Call
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.Body
-import retrofit2.http.Header
-import retrofit2.http.Headers
-import retrofit2.http.POST
+import retrofit2.http.*
 import java.util.concurrent.TimeUnit
 
 interface RideNgApi {
@@ -20,6 +17,11 @@ interface RideNgApi {
     @POST("/api/v1/auth/register")
     @Headers("Content-Type: application/json")
     suspend fun registerUser(@Body newUser: NewUser): Response<NewUserResponse>
+
+    @GET("/api/v1/vehicles")
+    suspend fun getVehicle(
+
+    )
 
 //    companion object {
 //        operator fun invoke(): RideNgApi {
