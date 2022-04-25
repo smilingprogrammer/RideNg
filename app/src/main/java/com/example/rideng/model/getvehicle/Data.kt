@@ -1,9 +1,11 @@
 package com.example.rideng.model.getvehicle
 
-data class GetVehicleData(
+data class Data(
     val __v: Int,
     val _id: String,
     val averageRating: Double,
+    val book_date: String,
+    val booking_id: String,
     val category: String,
     val cost: Int,
     val description: String,

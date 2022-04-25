@@ -3,13 +3,8 @@ package com.example.rideng.network
 import com.example.rideng.model.getvehicle.GetVehicle
 import com.example.rideng.model.registerUser.NewUser
 import com.example.rideng.model.registerUser.NewUserResponse
-import okhttp3.OkHttpClient
-import retrofit2.Call
 import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.*
-import java.util.concurrent.TimeUnit
 
 interface RideNgApi {
 
@@ -20,9 +15,7 @@ interface RideNgApi {
     suspend fun registerUser(@Body newUser: NewUser): Response<NewUserResponse>
 
     @GET("/api/v1/vehicles")
-    suspend fun getVehicle(
-
-    ): GetVehicle
+    suspend fun getVehicle(): GetVehicle
 
 //    companion object {
 //        operator fun invoke(): RideNgApi {
