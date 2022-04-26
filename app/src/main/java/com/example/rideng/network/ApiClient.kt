@@ -41,20 +41,3 @@ object ApiClient {
         retrofit.create(RideNgApi::class.java)
     }
 }
-//class ApiClient {
-//    companion object {
-//        val BASE_URL = "https://ride-ng.herokuapp.com"
-//        fun getRetrofitInstance(): Retrofit {
-//            val logging = HttpLoggingInterceptor()
-//            logging.level = HttpLoggingInterceptor.Level.BODY
-//            val client = OkHttpClient.Builder()
-//            client.addInterceptor(logging)
-//
-//            return Retrofit.Builder()
-//                .baseUrl(BASE_URL)
-//                .client(client.build())
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build()
-//        }
-//    }
-//}

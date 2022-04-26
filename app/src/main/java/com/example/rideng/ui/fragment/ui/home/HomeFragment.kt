@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import coil.load
 import com.example.rideng.databinding.FragmentHomeBinding
 import com.example.rideng.network.ApiClient
 import com.example.rideng.repository.SignUpRepository

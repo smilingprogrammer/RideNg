@@ -19,13 +19,12 @@ class HomeAdapter(): ListAdapter<Data, HomeAdapter.HomeViewHolder>(ItemCallback(
         override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean {
             return oldItem == newItem
         }
-
     }
 
     inner class HomeViewHolder(private val binding: ListHomeBinding):
         RecyclerView.ViewHolder(binding.root){
         fun bind(data: Data){
-            binding.image.load("${data.images}")
+            binding.image.load(data.images[2])
             binding.text.text = data.fuel_type
         }
     }
