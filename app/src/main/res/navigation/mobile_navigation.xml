@@ -2,18 +2,7 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
-
-    <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.rideng.ui.fragment.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_nav_home_to_homeDetailFragment"
-            app:destination="@id/homeDetailFragment" />
-    </fragment>
+    android:id="@+id/mobile_navigation">
 
     <fragment
         android:id="@+id/nav_gallery"
@@ -27,8 +16,8 @@
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_slideshow" />
     <fragment
-        android:id="@+id/homeDetailFragment"
-        android:name="com.example.rideng.ui.fragment.HomeDetailFragment"
-        android:label="HomeDetailFragment" >
-    </fragment>
+        android:id="@+id/nav_home_base"
+        android:name="com.example.rideng.HomeFragment"
+        android:label="home_base_fragment"
+        tools:layout="@layout/home_base_fragment" />
 </navigation>

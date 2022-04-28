@@ -60,7 +60,7 @@ class HomeFragment : Fragment(), (Data) -> Unit {
 
     override fun invoke(data: Data) {
         findNavController().navigate(
-            R.id.action_nav_home_to_homeDetailFragment, bundleOf("homeData" to data)
+            R.id.action_homeFragment_to_homeDetailFragment, bundleOf("homeData" to data)
         )
     }
 
