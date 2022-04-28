@@ -1,5 +1,7 @@
 package com.example.rideng.model.getvehicle
 
+import java.io.Serializable
+
 data class Data(
     val __v: Int,
     val _id: String,
@@ -25,4 +27,4 @@ data class Data(
     val user: User,
     val volume: String,
     val year: Int
-)
+): Serializable

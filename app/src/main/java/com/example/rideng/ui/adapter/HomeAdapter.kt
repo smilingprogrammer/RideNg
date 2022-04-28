@@ -9,7 +9,8 @@ import coil.load
 import com.example.rideng.databinding.ListHomeBinding
 import com.example.rideng.model.getvehicle.Data
 
-class HomeAdapter(): ListAdapter<Data, HomeAdapter.HomeViewHolder>(ItemCallback()) {
+class HomeAdapter(private val listener: (Data) -> Unit)
+    : ListAdapter<Data, HomeAdapter.HomeViewHolder>(ItemCallback()) {
 
     private class ItemCallback: DiffUtil.ItemCallback<Data>() {
         override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
@@ -25,7 +26,11 @@ class HomeAdapter(): ListAdapter<Data, HomeAdapter.HomeViewHolder>(ItemCallback(
         RecyclerView.ViewHolder(binding.root){
         fun bind(data: Data){
             binding.image.load(data.images[2])
-            binding.text.text = data.fuel_type
+            binding.location.text = data.location.city
+            binding.model.text = data.model
+            binding.allHome.setOnClickListener {
+                listener.invoke(data)
+            }
         }
     }
 

@@ -5,18 +5,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import coil.load
+import com.example.rideng.R
 import com.example.rideng.databinding.FragmentHomeBinding
+import com.example.rideng.model.getvehicle.Data
 import com.example.rideng.network.ApiClient
 import com.example.rideng.repository.SignUpRepository
 import com.example.rideng.ui.adapter.HomeAdapter
 import com.example.rideng.viewmodel.ViewModelFactory
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), (Data) -> Unit {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -43,7 +47,7 @@ class HomeFragment : Fragment() {
 
         val viewModel = ViewModelProvider(this).get(HomeViewModel::class.java)
 
-        val homeAdapter = HomeAdapter()
+        val homeAdapter = HomeAdapter(this)
         binding.home.apply {
             this.adapter = homeAdapter
             layoutManager = StaggeredGridLayoutManager(1, RecyclerView.VERTICAL)
@@ -52,11 +56,12 @@ class HomeFragment : Fragment() {
         viewModel.getVehicleLiveData.observe(viewLifecycleOwner) {
             homeAdapter.submitList(it)
         }
-
     }
 
-//    override fun onDestroyView() {
-//        super.onDestroyView()
-//        _binding = null
-//    }
+    override fun invoke(data: Data) {
+        findNavController().navigate(
+            R.id.action_nav_home_to_homeDetailFragment, bundleOf("homeData" to data)
+        )
+    }
+
 }
