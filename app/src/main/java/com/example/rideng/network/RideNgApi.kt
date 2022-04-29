@@ -14,6 +14,10 @@ interface RideNgApi {
     @Headers("Content-Type: application/json")
     suspend fun registerUser(@Body newUser: NewUser): Response<NewUserResponse>
 
+    @FormUrlEncoded
+    @POST("/api/v1/auth/login")
+    suspend fun loginUser(@FieldMap params: HashMap<String?, String?>):
+
     @GET("/api/v1/vehicles")
     suspend fun getVehicle(): GetVehicle
 

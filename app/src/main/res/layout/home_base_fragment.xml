@@ -27,6 +27,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:menu="@menu/activity_main_drawer"/>
+        app:menu="@menu/home_menu"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

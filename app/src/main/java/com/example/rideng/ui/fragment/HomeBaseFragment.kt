@@ -12,7 +12,6 @@ import androidx.navigation.fragment.findNavController
 import com.example.rideng.databinding.HomeBaseFragmentBinding
 import com.google.android.material.navigation.NavigationView
 
-
 class HomeFragment : Fragment() {
 
     private var _binding: HomeBaseFragmentBinding? = null
