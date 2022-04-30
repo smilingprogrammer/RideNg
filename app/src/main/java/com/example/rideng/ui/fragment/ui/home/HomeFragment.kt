@@ -4,21 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
-import coil.load
 import com.example.rideng.R
 import com.example.rideng.databinding.FragmentHomeBinding
 import com.example.rideng.model.getvehicle.Data
-import com.example.rideng.network.ApiClient
-import com.example.rideng.repository.SignUpRepository
 import com.example.rideng.ui.adapter.HomeAdapter
-import com.example.rideng.viewmodel.ViewModelFactory
 
 class HomeFragment : Fragment(), (Data) -> Unit {
 

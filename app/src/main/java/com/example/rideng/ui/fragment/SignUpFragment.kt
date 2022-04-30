@@ -1,7 +1,6 @@
 package com.example.rideng.ui.fragment
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -14,17 +13,15 @@ import com.example.rideng.R
 import com.example.rideng.viewmodel.SignUpViewModel
 import com.example.rideng.databinding.SignUpFragmentBinding
 import com.example.rideng.model.registerUser.NewUser
-import com.example.rideng.model.registerUser.NewUserResponse
 import com.example.rideng.network.ApiClient
-import com.example.rideng.repository.SignUpRepository
+import com.example.rideng.repository.AuthRepository
 import com.example.rideng.viewmodel.ViewModelFactory
-import kotlin.reflect.jvm.internal.impl.util.CheckResult
 
 class SignUpFragment : Fragment() {
 
     private lateinit var binding: SignUpFragmentBinding
     private val viewModel: SignUpViewModel by lazy {
-        ViewModelProvider(this, ViewModelFactory(SignUpRepository(ApiClient.retrofitService)))
+        ViewModelProvider(this, ViewModelFactory(AuthRepository(ApiClient.retrofitService)))
             .get(SignUpViewModel::class.java)
     }
 

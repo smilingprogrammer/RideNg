@@ -6,9 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.rideng.model.getvehicle.Data
-import com.example.rideng.network.RideNgApi
 import com.example.rideng.repository.HomeRepository
-import com.example.rideng.repository.SignUpRepository
 import kotlinx.coroutines.launch
 
 class HomeViewModel() : ViewModel() {
