@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun moveToLoginActivity(){
-        startActivity(Intent(this, HomeActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
         finish()
     }
 }

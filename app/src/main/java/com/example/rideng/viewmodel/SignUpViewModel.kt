@@ -1,5 +1,6 @@
 package com.example.rideng.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -9,9 +10,10 @@ import com.example.rideng.repository.AuthRepository
 import kotlinx.coroutines.launch
 import retrofit2.Response
 
-class SignUpViewModel(private val authRepository: AuthRepository) : ViewModel() {
+class SignUpViewModel : ViewModel() {
 
-    private val TAG = "RETROFIT_ERROR"
+    private val authRepository = AuthRepository()
+    private val TAG = SignUpViewModel::class.java.simpleName
 
     var newUserResponse: MutableLiveData<Response<NewUserResponse>> = MutableLiveData()
 
@@ -19,6 +21,7 @@ class SignUpViewModel(private val authRepository: AuthRepository) : ViewModel() 
         viewModelScope.launch {
             val response = authRepository.registerUser(newUser)
             newUserResponse.value = response
+            Log.d(TAG, "${newUserResponse.value}")
         }
     }
 }

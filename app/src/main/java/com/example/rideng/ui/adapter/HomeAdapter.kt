@@ -7,24 +7,24 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.rideng.databinding.ListHomeBinding
-import com.example.rideng.model.getvehicle.Data
+import com.example.rideng.model.getvehicle.GetVehicleData
 
-class HomeAdapter(private val listener: (Data) -> Unit)
-    : ListAdapter<Data, HomeAdapter.HomeViewHolder>(ItemCallback()) {
+class HomeAdapter(private val listener: (GetVehicleData) -> Unit)
+    : ListAdapter<GetVehicleData, HomeAdapter.HomeViewHolder>(ItemCallback()) {
 
-    private class ItemCallback: DiffUtil.ItemCallback<Data>() {
-        override fun areItemsTheSame(oldItem: Data, newItem: Data): Boolean {
+    private class ItemCallback: DiffUtil.ItemCallback<GetVehicleData>() {
+        override fun areItemsTheSame(oldItem: GetVehicleData, newItem: GetVehicleData): Boolean {
             return oldItem._id == newItem._id
         }
 
-        override fun areContentsTheSame(oldItem: Data, newItem: Data): Boolean {
+        override fun areContentsTheSame(oldItem: GetVehicleData, newItem: GetVehicleData): Boolean {
             return oldItem == newItem
         }
     }
 
     inner class HomeViewHolder(private val binding: ListHomeBinding):
         RecyclerView.ViewHolder(binding.root){
-        fun bind(data: Data){
+        fun bind(data: GetVehicleData){
             binding.image.load(data.images[2])
             binding.location.text = data.location.city
             binding.model.text = data.model

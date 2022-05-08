@@ -12,10 +12,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
 import com.example.rideng.R
 import com.example.rideng.databinding.FragmentHomeBinding
-import com.example.rideng.model.getvehicle.Data
+import com.example.rideng.model.getvehicle.GetVehicleData
 import com.example.rideng.ui.adapter.HomeAdapter
 
-class HomeFragment : Fragment(), (Data) -> Unit {
+class HomeFragment : Fragment(), (GetVehicleData) -> Unit {
 
     private var _binding: FragmentHomeBinding? = null
 
@@ -53,7 +53,7 @@ class HomeFragment : Fragment(), (Data) -> Unit {
         }
     }
 
-    override fun invoke(data: Data) {
+    override fun invoke(data: GetVehicleData) {
         findNavController().navigate(
             R.id.action_homeFragment_to_homeDetailFragment, bundleOf("homeData" to data)
         )

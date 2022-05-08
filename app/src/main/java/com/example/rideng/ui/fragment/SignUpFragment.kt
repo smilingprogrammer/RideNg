@@ -13,17 +13,11 @@ import com.example.rideng.R
 import com.example.rideng.viewmodel.SignUpViewModel
 import com.example.rideng.databinding.SignUpFragmentBinding
 import com.example.rideng.model.registerUser.NewUser
-import com.example.rideng.network.ApiClient
-import com.example.rideng.repository.AuthRepository
-import com.example.rideng.viewmodel.ViewModelFactory
 
 class SignUpFragment : Fragment() {
 
     private lateinit var binding: SignUpFragmentBinding
-    private val viewModel: SignUpViewModel by lazy {
-        ViewModelProvider(this, ViewModelFactory(AuthRepository(ApiClient.retrofitService)))
-            .get(SignUpViewModel::class.java)
-    }
+    private val viewModel = ViewModelProvider(this).get(SignUpViewModel::class.java)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

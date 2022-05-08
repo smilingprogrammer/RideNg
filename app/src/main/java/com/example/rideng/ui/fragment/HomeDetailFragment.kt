@@ -5,16 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
 import coil.load
 import com.example.rideng.databinding.FragmentHomeDetailBinding
-import com.example.rideng.model.getvehicle.Data
+import com.example.rideng.model.getvehicle.GetVehicleData
 
 class HomeDetailFragment : Fragment() {
 
     private var _binding: FragmentHomeDetailBinding? = null
     private val binding get() = _binding!!
-    private lateinit var data: Data
+    private lateinit var data: GetVehicleData
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,7 +28,7 @@ class HomeDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         arguments?.let {
-            data = it.get("homeData") as Data
+            data = it.get("homeData") as GetVehicleData
         }
 
         binding.image.load(data.images[1])

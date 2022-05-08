@@ -2,7 +2,7 @@ package com.example.rideng.model.registerUser
 
 import com.google.gson.annotations.SerializedName
 
-data class Data(
+data class RegisterUserData(
 //    @SerializedName("__v")
     val __v: Int,
 //    @SerializedName("_id")

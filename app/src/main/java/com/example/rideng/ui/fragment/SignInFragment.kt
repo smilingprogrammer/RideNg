@@ -1,32 +1,23 @@
 package com.example.rideng.ui.fragment
 
-import android.app.Dialog
-import android.content.Context
 import android.content.Intent
-import android.net.ConnectivityManager
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.WindowManager
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.rideng.R
 import com.example.rideng.viewmodel.SignInViewModel
 import com.example.rideng.databinding.SignInFragmentBinding
-import com.example.rideng.network.ApiClient
-import com.example.rideng.repository.AuthRepository
-import com.example.rideng.viewmodel.ViewModelFactory
 
 class SignInFragment : Fragment() {
 
     private lateinit var binding: SignInFragmentBinding
-    private val viewModel: SignInViewModel by lazy {
-        ViewModelProvider(this, ViewModelFactory(AuthRepository(ApiClient.retrofitService)))
-            .get(SignInViewModel::class.java)
-    }
+    private val viewModel = ViewModelProvider(this).get(SignInViewModel::class.java)
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,6 +41,8 @@ class SignInFragment : Fragment() {
                 val intent = Intent(context, HomeActivity::class.java)
                 intent.putExtra(HomeActivity.USER_DETAILS, it.isSuccessful)
                 startActivity(intent)
+            } else {
+                Toast.makeText(context, "Failed to login user", Toast.LENGTH_SHORT).show()
             }
         })
 

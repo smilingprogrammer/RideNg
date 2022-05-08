@@ -2,7 +2,7 @@ package com.example.rideng.model.getvehicle
 
 import java.io.Serializable
 
-data class Data(
+data class GetVehicleData(
     val __v: Int,
     val _id: String,
     val averageRating: Double,

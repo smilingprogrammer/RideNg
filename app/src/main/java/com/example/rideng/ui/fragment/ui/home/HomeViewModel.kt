@@ -5,7 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.rideng.model.getvehicle.Data
+import com.example.rideng.model.getvehicle.GetVehicleData
 import com.example.rideng.repository.HomeRepository
 import kotlinx.coroutines.launch
 
@@ -23,8 +23,8 @@ class HomeViewModel() : ViewModel() {
         getVehicle()
     }
 
-    private val _getVehicleLiveData = MutableLiveData<List<Data>>()
-    val getVehicleLiveData: LiveData<List<Data>>
+    private val _getVehicleLiveData = MutableLiveData<List<GetVehicleData>>()
+    val getVehicleLiveData: LiveData<List<GetVehicleData>>
     get() = _getVehicleLiveData
 
     private fun getVehicle(){

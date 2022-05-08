@@ -1,6 +1,7 @@
 package com.example.rideng.model.loginuser
 
 data class LoginResponse(
-    val password: String,
-    val username: String
+    val loginData: LoginData,
+    val success: Boolean,
+    val token: String
 )
