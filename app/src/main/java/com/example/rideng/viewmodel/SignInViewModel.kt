@@ -4,6 +4,7 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.rideng.model.loginuser.LoginInfo
 import com.example.rideng.model.loginuser.LoginResponse
 import com.example.rideng.repository.AuthRepository
 import kotlinx.coroutines.launch
@@ -16,9 +17,9 @@ class SignInViewModel : ViewModel() {
 
     var user: MutableLiveData<Response<LoginResponse>> = MutableLiveData()
 
-    fun loginUser(username: String, password: String){
+    fun loginUser(loginInfo: LoginInfo){
         viewModelScope.launch {
-            val response = authRepository.loginUser(username, password)
+            val response = authRepository.loginUser(loginInfo)
             user.value = response
             Log.d(TAG, "${user.value}")
         }

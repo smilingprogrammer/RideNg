@@ -1,4 +1,4 @@
-package com.example.rideng.ui.fragment.ui.slideshow
+package com.example.rideng.ui.fragment.ui.booking
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.rideng.databinding.FragmentSlideshowBinding
 
-class SlideshowFragment : Fragment() {
+class BookingFragment : Fragment() {
 
     private var _binding: FragmentSlideshowBinding? = null
 
@@ -23,7 +23,7 @@ class SlideshowFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val slideshowViewModel =
-            ViewModelProvider(this).get(SlideshowViewModel::class.java)
+            ViewModelProvider(this).get(BookingViewModel::class.java)
 
         _binding = FragmentSlideshowBinding.inflate(inflater, container, false)
         val root: View = binding.root

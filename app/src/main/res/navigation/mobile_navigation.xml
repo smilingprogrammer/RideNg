@@ -14,9 +14,9 @@
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.example.rideng.ui.fragment.ui.slideshow.SlideshowFragment"
+        android:name="com.example.rideng.ui.fragment.ui.booking.BookingFragment"
         android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_booking" />
     <fragment
         android:id="@+id/nav_home_base"
         android:name="com.example.rideng.HomeFragment"

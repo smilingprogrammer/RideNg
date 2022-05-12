@@ -1,6 +1,7 @@
 package com.example.rideng.network
 
 import com.example.rideng.model.getvehicle.GetVehicle
+import com.example.rideng.model.loginuser.LoginInfo
 import com.example.rideng.model.loginuser.LoginResponse
 import com.example.rideng.model.registerUser.NewUser
 import com.example.rideng.model.registerUser.NewUserResponse
@@ -15,9 +16,8 @@ interface RideNgApi {
     suspend fun registerUser(@Body newUser: NewUser): Response<NewUserResponse>
 
     //LoginUser
-    @FormUrlEncoded
     @POST("/api/v1/auth/login")
-    suspend fun loginUser(@FieldMap params: HashMap<String?, String?>): Response<LoginResponse>
+    suspend fun loginUser(@Body loginInfo: LoginInfo): Response<LoginResponse>
 
     @GET("/api/v1/vehicles")
     suspend fun getVehicle(): GetVehicle

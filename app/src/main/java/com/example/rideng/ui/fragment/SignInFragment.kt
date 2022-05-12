@@ -7,17 +7,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.rideng.R
 import com.example.rideng.viewmodel.SignInViewModel
 import com.example.rideng.databinding.SignInFragmentBinding
+import com.example.rideng.model.loginuser.LoginInfo
 
 class SignInFragment : Fragment() {
 
     private lateinit var binding: SignInFragmentBinding
-    private val viewModel = ViewModelProvider(this).get(SignInViewModel::class.java)
+//    private val viewModel = ViewModelProvider(this).get(SignInViewModel::class.java)
+
+    private val viewModel: SignInViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -60,7 +64,8 @@ class SignInFragment : Fragment() {
             val username = userName.text.toString()
             val password = password.text.toString()
 
-            viewModel.loginUser(username, password)
+            val loginInfo = LoginInfo(password, username)
+            viewModel.loginUser(loginInfo)
         }
     }
 

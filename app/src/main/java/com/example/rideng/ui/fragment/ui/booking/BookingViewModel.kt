@@ -1,10 +1,10 @@
-package com.example.rideng.ui.fragment.ui.slideshow
+package com.example.rideng.ui.fragment.ui.booking
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SlideshowViewModel : ViewModel() {
+class BookingViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = "This is slideshow Fragment"

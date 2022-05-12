@@ -1,5 +1,6 @@
 package com.example.rideng.repository
 
+import com.example.rideng.model.loginuser.LoginInfo
 import com.example.rideng.model.loginuser.LoginResponse
 import com.example.rideng.model.registerUser.NewUser
 import com.example.rideng.model.registerUser.NewUserResponse
@@ -15,10 +16,7 @@ class AuthRepository {
         return apiSerVice.registerUser(newUser)
     }
 
-    suspend fun loginUser(username: String, password: String): Response<LoginResponse>{
-        val params = HashMap<String?, String?>()
-        params["email"] = username
-        params["password"] = password
-        return apiSerVice.loginUser(params)
+    suspend fun loginUser(loginInfo: LoginInfo): Response<LoginResponse>{
+        return apiSerVice.loginUser(loginInfo)
     }
 }
