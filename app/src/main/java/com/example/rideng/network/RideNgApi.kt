@@ -1,5 +1,7 @@
 package com.example.rideng.network
 
+import com.example.rideng.model.addvehicle.AddVehicle
+import com.example.rideng.model.addvehicle.AddVehicleResponse
 import com.example.rideng.model.getvehicle.GetVehicle
 import com.example.rideng.model.loginuser.LoginInfo
 import com.example.rideng.model.loginuser.LoginResponse
@@ -21,5 +23,8 @@ interface RideNgApi {
 
     @GET("/api/v1/vehicles")
     suspend fun getVehicle(): GetVehicle
+
+    @POST("/api/v1/vehicles")
+    suspend fun addVehicle(@Body addVehicle: AddVehicle): Response<AddVehicleResponse>
 
 }
